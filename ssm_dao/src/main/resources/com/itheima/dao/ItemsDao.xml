@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace：给哪个接口配置的映射，写接口的全限定类名-->
+<mapper namespace="com.itheima.dao.ItemsDao">
+
+    <!--查询所有商品-->
+    <select id="queryAll" resultType="Items">
+        select * from items;
+    </select>
+
+    <!--增加商品-->
+    <insert id="add" parameterType="Items">
+        insert into items (
+          name,
+          price,
+          pic,
+          createtime,
+          detail
+        ) values(
+          #{name},
+          #{price},
+          #{pic},
+          #{createtime},
+          #{detail}
+        )
+    </insert>
+
+</mapper>
